@@ -1,0 +1,48 @@
+A simple WordScraper using Test Driven Development exercise.
+
+Acceptance Criteria - Conditions that the software must satisfy
+- The application should be able to provide a list of words to be unscambled     
+  either manually or as a file.
+- The process of unscramling will be based on a external file (which is a list of    
+  words per line).
+- The process of comparing the words togheter should not care for any language   
+  specific rules and should be case insensitive.
+  
+
+ * * * * * * * * * * * * * * Example * * * * * * * * * * * * * * * 
+ * F - file/M - manual | for F - ask for filenameoutput          * 
+ * 	               | for M - ask for word or words seperated *
+ *                     | by commas                               *
+ * ____________________|_________________________________________*
+ * AGNES, atc          | Match found for OLLHE: HELLO            *
+ *                     | Match found for atc: cat                *
+ *                     | Match found for atc: act                *
+ *_____________________|_________________________________________*
+ * continue? Y/N       | For Y - start over			 *
+ * 		       | For N - close application		 *
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+Algorithm - logical thought process of the application
+- Get input from user
+      If option is manual then ask user to enter word or words /w comma seperation       
+      If option is file then ask user to enter the full path including the name
+         If the file is not recognized show warning. Ask if user want to continue
+	    If user chooses yes, then go to first step
+	    If user chooses not, then exit
+      If option is not recognized then show warning and ask if user wants to continue
+ 	 If user choose yes, then go to fist step
+	 If user choose no, then exit
+      Load the word list  specified by the user unscrambling the given scrambled words
+      Start matching scrambled words against the loaded word list
+         For each scrambled word in specified scrambled words
+	    For each unscrambled word in word list
+	       If scramble word == unscrambled word then add to list of mached
+	       Else 
+		   Sort scrambled word
+		   Sort unscrambled word
+	 If matches found then show matched scrambled words for all unscramled words
+	 Else show message that no matches have been found
+      Ask if user wants to continue
+
+	
+
