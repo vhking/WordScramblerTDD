@@ -6,7 +6,7 @@ namespace WordScramblerTDD
 {
     public class WordMatcher
     {
-        internal List<MacthedWord> Match(string[] scrambleWords, string[] wordList)
+        public List<MacthedWord> Match(string[] scrambleWords, string[] wordList)
         {
             throw new NotImplementedException();
         }
