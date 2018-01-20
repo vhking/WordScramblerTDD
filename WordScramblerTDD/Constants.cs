@@ -12,5 +12,8 @@ namespace WordScramblerTDD
         public const string ErrorProgramWillBeTerminated = "Error. The program will be terminated";
         public const string File = "F";
         public const string Manual = "M";
+        public const string WordListFileName = "wordsEn.txt";
+        public const string MatchFound = "Match found for {0}: {1}";
+        public const string MactheNotFound = "No matches have been found";
     }
 }

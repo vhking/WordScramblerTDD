@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using WordScramblerTDD.Data;
 
 namespace WordScramblerTDD
 {
@@ -55,12 +58,35 @@ namespace WordScramblerTDD
 
         private static void ExecuteScrambledWordsInFile()
         {
-            throw new NotImplementedException();
+            var file = Console.ReadLine() ?? string.Empty;
+            string[] scrambleWords = _fileReader.Read(file);
+            DisplayMacthUnscrambledWords(scrambleWords);
         }
 
         private static void EcexuteScrambledWords()
         {
-            throw new NotImplementedException();
+            var input = Console.ReadLine() ?? string.Empty;
+            string[] scrambleWords = input.Split(',');
+            DisplayMacthUnscrambledWords(scrambleWords);
+
+        }
+
+        private static void DisplayMacthUnscrambledWords(string[] scrambleWords)
+        {
+            string[] wordList = _fileReader.Read(Constants.WordListFileName);
+
+            List<MacthedWord> matchedWords = _wordMatcher.Match(scrambleWords, wordList);
+
+            if (matchedWords.Any())
+            {
+                foreach (var matchedWord in matchedWords)
+                {
+                    Console.WriteLine(Constants.MatchFound, matchedWord.ScrambledWord, matchedWord.Word);
+                }
+            }else
+            {
+                Console.WriteLine(Constants.MactheNotFound);
+            }
         }
     }
 }
