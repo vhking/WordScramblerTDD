@@ -52,5 +52,15 @@ namespace WordScramblerTDD
             }
           
         }
+
+        private static void ExecuteScrambledWordsInFile()
+        {
+            throw new NotImplementedException();
+        }
+
+        private static void EcexuteScrambledWords()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
